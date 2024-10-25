@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player;
+    [SerializeField] public float followingSpeed = 5f;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (player != null)
+        {
+            Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, -10);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, followingSpeed * Time.deltaTime);
+        }
     }
 }

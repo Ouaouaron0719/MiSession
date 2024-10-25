@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Melon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int healthRecovery = 20;
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Crashing");
+            HealthManager healthManager = FindObjectOfType<HealthManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (healthManager != null)
+            {
+                healthManager.currentHealth = Mathf.Min//Unity Documentation
+                    (
+                        healthManager.currentHealth + healthRecovery,
+                        healthManager.maxHealth
+                    );
+                Destroy(gameObject);
+            }
+        }   
     }
 }

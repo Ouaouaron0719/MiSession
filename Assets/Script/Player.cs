@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]public float speed = 5f;       
+    [SerializeField] public float swimSpeed = 3f;   
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        float move = Input.GetAxis("Horizontal");
+
+        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
+        if (move > 0)
+        {
+            spriteRenderer.flipX = false;  
+        }
+        else if (move < 0)
+        {
+            spriteRenderer.flipX = true;  
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
+        }
     }
 }

@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730407060733605936}
+  - component: {fileID: -9214835518406556305}
   m_Layer: 0
   m_Name: SpikeSpawner
   m_TagString: Untagged
@@ -116,3 +117,17 @@ Transform:
   - {fileID: 743310437806131877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9214835518406556305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691361693700919293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdd57ef6987cc646b0504910ae2b8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikePrefab: {fileID: 2669654686024374143, guid: 88283fd5b9415f24b90f1f0e1cf18536, type: 3}
+  spawnInterval: 2

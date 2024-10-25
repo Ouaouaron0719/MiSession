@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         healthText.text = "PV: " + currentHealth;
     }

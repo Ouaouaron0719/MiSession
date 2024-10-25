@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     public int maxHealth = 100;     
     public int currentHealth;       
     public TextMeshProUGUI healthText;
-    public GameObject gameOverText;
+    public GameOverManager gameOverManager;
 
     void Start()
     {
@@ -40,7 +40,6 @@ public class HealthManager : MonoBehaviour
 
     void GameOver()
     {
-        gameOverText.SetActive(true);
-        Time.timeScale = 0f;
+        gameOverManager.TriggerGameOver();
     }
 }
